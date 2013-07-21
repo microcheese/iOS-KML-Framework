@@ -80,7 +80,7 @@
 
 - (void)setAltitude:(CGFloat)altitude
 {
-    _altitudeValue = [NSString stringWithFormat:@"%d", altitude];
+    _altitudeValue = [NSString stringWithFormat:@"%f", altitude];
 }
 
 - (CGFloat)heading
@@ -116,7 +116,7 @@
 
 - (void)setRange:(CGFloat)range
 {
-    _rangeValue = [NSString stringWithFormat:@"%d", range];
+    _rangeValue = [NSString stringWithFormat:@"%f", range];
 }
 
 - (KMLAltitudeMode)altitudeMode

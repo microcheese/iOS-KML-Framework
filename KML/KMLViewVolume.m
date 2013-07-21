@@ -95,7 +95,7 @@
 
 - (void)setNear:(CGFloat)near
 {
-    _nearValue = [NSString stringWithFormat:@"%d", near];
+    _nearValue = [NSString stringWithFormat:@"%f", near];
 }
 
 

@@ -80,7 +80,7 @@
 
 - (void)setAltitude:(CGFloat)altitude
 {
-    _altitudeValue = [NSString stringWithFormat:@"%d", altitude];
+    _altitudeValue = [NSString stringWithFormat:@"%f", altitude];
 }
 
 - (CGFloat)heading
