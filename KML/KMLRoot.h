@@ -38,6 +38,9 @@
 /** The namespace for external XML schemas. */
 @property (strong, nonatomic, readonly) NSString *schema;
 
+/** An optional array of NSStrings containing additional xml namespaces. */
+@property (strong, nonatomic) NSArray *namespaces;
+
 /** The hint attribute is used as a signal to Google Earth to display the file as celestial data. */
 @property (strong, nonatomic) NSString *hint;
 

@@ -22,6 +22,7 @@
 @implementation KMLRoot
 
 @synthesize schema = _schema;
+@synthesize namespaces = _namespaces;
 @synthesize hint = _hint;
 @synthesize networkLinkControl = _networkLinkControl;
 @synthesize feature = _feature;
@@ -125,6 +126,12 @@
     if (self.schema) {
         [attribute appendFormat:@" xmlns=\"%@\"", self.schema];
     }
+    /* SJT 120812 */
+    if (self.namespaces) {
+        for (NSString *namespace in self.namespaces)
+            [attribute appendFormat:@" %@", namespace];
+    }
+    /* end SJT 120812 */
     if (self.hint) {
         [attribute appendFormat:@" hint=\"%@\"", self.hint];
     }
