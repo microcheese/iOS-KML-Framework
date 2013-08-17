@@ -147,6 +147,7 @@
     [self kml:kml addPropertyForValue:_longitudeValue defaultValue:@"0" tagName:@"longitude" indentationLevel:indentationLevel];
     [self kml:kml addPropertyForValue:_latitudeValue defaultValue:@"0" tagName:@"latitude" indentationLevel:indentationLevel];
     [self kml:kml addPropertyForValue:_altitudeValue defaultValue:@"0" tagName:@"altitude" indentationLevel:indentationLevel];
+    [self kml:kml addPropertyForValue:_headingValue defaultValue:@"0" tagName:@"heading" indentationLevel:indentationLevel];
     [self kml:kml addPropertyForValue:_tiltValue defaultValue:@"0" tagName:@"tilt" indentationLevel:indentationLevel];
     [self kml:kml addPropertyForValue:_rangeValue defaultValue:@"0" tagName:@"range" indentationLevel:indentationLevel];
     [self kml:kml addPropertyForValue:_altitudeModeValue defaultValue:@"clampToGround" tagName:@"altitudeMode" indentationLevel:indentationLevel];
