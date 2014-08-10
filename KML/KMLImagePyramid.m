@@ -45,7 +45,7 @@
 
 - (void)setTileSize:(NSInteger)tileSize
 {
-    _tileSizeValue = [NSString stringWithFormat:@"%d", tileSize];
+    _tileSizeValue = [NSString stringWithFormat:@"%ld", (long) tileSize];
 }
 
 - (NSInteger)maxWidth
@@ -55,7 +55,7 @@
 
 - (void)setMaxWidth:(NSInteger)maxWidth
 {
-    _maxWidthValue = [NSString stringWithFormat:@"%d", maxWidth];
+    _maxWidthValue = [NSString stringWithFormat:@"%ld", (long) maxWidth];
 }
 
 - (NSInteger)maxHeight
@@ -65,7 +65,7 @@
 
 - (void)setMaxHeight:(NSInteger)maxHeight
 {
-    _maxHeightValue = [NSString stringWithFormat:@"%d", maxHeight];
+    _maxHeightValue = [NSString stringWithFormat:@"%ld", (long) maxHeight];
 }
 
 - (KMLGridOrigin)gridOrigin

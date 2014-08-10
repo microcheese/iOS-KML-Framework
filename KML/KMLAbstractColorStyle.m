@@ -52,7 +52,7 @@
         // validate ffffffff fromat
         NSRange match = [self.color rangeOfString:@"^[0-9a-fA-F]{8}$" options:NSRegularExpressionSearch];
         if (match.location != NSNotFound) {
-            uint hex = strtoul([self.color UTF8String], NULL, 16);		
+            uint hex = (uint) strtoul([self.color UTF8String], NULL, 16);
             return [UIColor colorWithRed:(CGFloat)(hex & 0xff) / 255.0f  
                                    green:(CGFloat)((hex>>8) & 0xff) / 255.0f  
                                     blue:(CGFloat)((hex>>16) & 0xff) / 255.0f  
@@ -66,14 +66,14 @@
 - (void)setUIColor:(UIColor *)color
 {
     const CGFloat *components = CGColorGetComponents(color.CGColor);
-    int componentsCount = CGColorGetNumberOfComponents(color.CGColor);
+    int componentsCount = (int) CGColorGetNumberOfComponents(color.CGColor);
     
     NSInteger red = (int)(components[0] * 0xff);
     NSInteger green = (int)(components[(componentsCount == 4 ? 1 : 0)] * 0xff);
     NSInteger blue = (int)(components[(componentsCount == 4 ? 2 : 0)] * 0xff);
     NSInteger alpha = (int)(components[(componentsCount == 4 ? 3 : 1)] * 0xff);
 
-    self.color = [NSString stringWithFormat:@"%02x%02x%02x%02x", alpha, blue, green, red];
+    self.color = [NSString stringWithFormat:@"%02x%02x%02x%02x", (int) alpha, (int) blue, (int) green, (int) red];
 }
 
 
