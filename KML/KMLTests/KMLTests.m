@@ -2,27 +2,26 @@
 //  KMLTests.m
 //  KMLTests
 //
-//  Created by 俊紀 渡辺 on 12/04/06.
-//  Copyright (c) 2012年 _MyCompanyName_. All rights reserved.
+//  Created by Stephen Trainor on 05/12/2015.
+//  Copyright © 2015 Crookneck Consulting LLC. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import <KML/KML.h>
 
-#import "KML.h"
+@interface KMLTests : XCTestCase
 
-@implementation KMLTests : XCTestCase
+@end
 
-- (void)setUp
-{
+@implementation KMLTests
+
+- (void)setUp {
     [super setUp];
-    
-    // Set-up code here.
+    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
+- (void)tearDown {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
@@ -34,7 +33,7 @@
     
     // kml
     XCTAssertNotNil(root);
-
+    
     // kml > document
     XCTAssertTrue([root.feature isKindOfClass:[KMLDocument class]]);
     KMLDocument *document = (KMLDocument *)root.feature;
@@ -46,7 +45,7 @@
     
     KMLPlacemark *placemark;
     KMLCoordinate *coordinate;
-
+    
     // placemark
     placemark = [root.placemarks objectAtIndex:0];
     XCTAssertEqualObjects(placemark.name, @"Simple placemark");
@@ -54,14 +53,14 @@
     XCTAssertTrue([placemark.geometry isKindOfClass:[KMLPoint class]]);
     XCTAssertEqual(((KMLPoint *)placemark.geometry).coordinate.latitude, 37.42228990140251f);
     XCTAssertEqual(((KMLPoint *)placemark.geometry).coordinate.longitude, -122.0822035425683f);
-
+    
     placemark = [root.placemarks objectAtIndex:2];
     XCTAssertEqualObjects(placemark.name, @"Extruded placemark");
     XCTAssertEqualObjects(placemark.descriptionValue, @"Tethered to the ground by a customizable\n          &quot;tail&quot;");
     XCTAssertTrue([placemark.geometry isKindOfClass:[KMLPoint class]]);
     XCTAssertEqual(((KMLPoint *)placemark.geometry).coordinate.latitude, 37.42156927867553f);
     XCTAssertEqual(((KMLPoint *)placemark.geometry).coordinate.longitude, -122.0857667006183f);
-
+    
     // line
     placemark = [root.placemarks objectAtIndex:10];
     XCTAssertEqualObjects(placemark.name, @"Relative Extruded");
@@ -78,7 +77,7 @@
     coordinate = [linestring.coordinates objectAtIndex:10];
     XCTAssertEqual(coordinate.latitude, 36.10149062823369f);
     XCTAssertEqual(coordinate.longitude, -112.2626894973474f);
-
+    
     // polygon
     placemark = [root.placemarks objectAtIndex:19];
     XCTAssertEqualObjects(placemark.name, @"Relative Extruded");

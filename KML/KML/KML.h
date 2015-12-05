@@ -1,10 +1,22 @@
 //
 //  KML.h
-//  KML Framework
+//  KML
 //
-//  Created by NextBusinessSystem on 12/04/06.
-//  Copyright (c) 2012 NextBusinessSystem Co., Ltd. All rights reserved.
+//  Created by Stephen Trainor on 05/12/2015.
+//  Copyright © 2015 Crookneck Consulting LLC. All rights reserved.
 //
+
+#import <UIKit/UIKit.h>
+
+//! Project version number for KML.
+FOUNDATION_EXPORT double KMLVersionNumber;
+
+//! Project version string for KML.
+FOUNDATION_EXPORT const unsigned char KMLVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <KML/PublicHeader.h>
+
+
 
 #import <KML/KMLParser.h>
 #import <KML/KMLConst.h>
