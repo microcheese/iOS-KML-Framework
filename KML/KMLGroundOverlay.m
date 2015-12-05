@@ -50,7 +50,7 @@
 
 - (void)setAltitude:(NSInteger)altitude
 {
-    _altitudeValue = [NSString stringWithFormat:@"%d", altitude];
+    _altitudeValue = [NSString stringWithFormat:@"%ld", (long)altitude];
 }
 
 - (KMLAltitudeMode)altitudeMode

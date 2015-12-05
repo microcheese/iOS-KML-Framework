@@ -6,10 +6,11 @@
 //  Copyright (c) 2012年 _MyCompanyName_. All rights reserved.
 //
 
-#import "KMLTests.h"
+#import <XCTest/XCTest.h>
+
 #import "KML.h"
 
-@implementation KMLTests
+@implementation KMLTests : XCTestCase
 
 - (void)setUp
 {
@@ -32,68 +33,68 @@
     KMLRoot *root = [KMLParser parseKMLAtPath:path];
     
     // kml
-    STAssertNotNil(root, nil);
+    XCTAssertNotNil(root);
 
     // kml > document
-    STAssertTrue([root.feature isKindOfClass:[KMLDocument class]], nil);
+    XCTAssertTrue([root.feature isKindOfClass:[KMLDocument class]]);
     KMLDocument *document = (KMLDocument *)root.feature;
-    STAssertEqualObjects(document.name, @"KML Samples", nil);
-    STAssertEqualObjects(document.descriptionValue, @"Unleash your creativity with the help of these examples!", nil);
+    XCTAssertEqualObjects(document.name, @"KML Samples");
+    XCTAssertEqualObjects(document.descriptionValue, @"Unleash your creativity with the help of these examples!");
     
     // kml > All placemarks
-    STAssertEquals(root.placemarks.count, 20U, nil);
+    XCTAssertEqual(root.placemarks.count, 20U);
     
     KMLPlacemark *placemark;
     KMLCoordinate *coordinate;
 
     // placemark
     placemark = [root.placemarks objectAtIndex:0];
-    STAssertEqualObjects(placemark.name, @"Simple placemark", nil);
-    STAssertEqualObjects(placemark.descriptionValue, @"Attached to the ground. Intelligently places itself at the\n          height of the underlying terrain.", nil);
-    STAssertTrue([placemark.geometry isKindOfClass:[KMLPoint class]], nil);
-    STAssertEquals(((KMLPoint *)placemark.geometry).coordinate.latitude, 37.42228990140251f, nil);
-    STAssertEquals(((KMLPoint *)placemark.geometry).coordinate.longitude, -122.0822035425683f, nil);
+    XCTAssertEqualObjects(placemark.name, @"Simple placemark");
+    XCTAssertEqualObjects(placemark.descriptionValue, @"Attached to the ground. Intelligently places itself at the\n          height of the underlying terrain.");
+    XCTAssertTrue([placemark.geometry isKindOfClass:[KMLPoint class]]);
+    XCTAssertEqual(((KMLPoint *)placemark.geometry).coordinate.latitude, 37.42228990140251f);
+    XCTAssertEqual(((KMLPoint *)placemark.geometry).coordinate.longitude, -122.0822035425683f);
 
     placemark = [root.placemarks objectAtIndex:2];
-    STAssertEqualObjects(placemark.name, @"Extruded placemark", nil);
-    STAssertEqualObjects(placemark.descriptionValue, @"Tethered to the ground by a customizable\n          &quot;tail&quot;", nil);
-    STAssertTrue([placemark.geometry isKindOfClass:[KMLPoint class]], nil);
-    STAssertEquals(((KMLPoint *)placemark.geometry).coordinate.latitude, 37.42156927867553f, nil);
-    STAssertEquals(((KMLPoint *)placemark.geometry).coordinate.longitude, -122.0857667006183f, nil);
+    XCTAssertEqualObjects(placemark.name, @"Extruded placemark");
+    XCTAssertEqualObjects(placemark.descriptionValue, @"Tethered to the ground by a customizable\n          &quot;tail&quot;");
+    XCTAssertTrue([placemark.geometry isKindOfClass:[KMLPoint class]]);
+    XCTAssertEqual(((KMLPoint *)placemark.geometry).coordinate.latitude, 37.42156927867553f);
+    XCTAssertEqual(((KMLPoint *)placemark.geometry).coordinate.longitude, -122.0857667006183f);
 
     // line
     placemark = [root.placemarks objectAtIndex:10];
-    STAssertEqualObjects(placemark.name, @"Relative Extruded", nil);
-    STAssertEqualObjects(placemark.descriptionValue, @"Opaque blue walls with red outline, height tracks terrain", nil);
-    STAssertTrue([placemark.geometry isKindOfClass:[KMLLineString class]], nil);
+    XCTAssertEqualObjects(placemark.name, @"Relative Extruded");
+    XCTAssertEqualObjects(placemark.descriptionValue, @"Opaque blue walls with red outline, height tracks terrain");
+    XCTAssertTrue([placemark.geometry isKindOfClass:[KMLLineString class]]);
     KMLLineString *linestring = (KMLLineString *)placemark.geometry;
-    STAssertEquals(linestring.coordinates.count, 11U,nil);
+    XCTAssertEqual(linestring.coordinates.count, 11U);
     coordinate = [linestring.coordinates objectAtIndex:0];
-    STAssertEquals(coordinate.latitude, 36.09445214722695f, nil);
-    STAssertEquals(coordinate.longitude, -112.2656634181359f, nil);
+    XCTAssertEqual(coordinate.latitude, 36.09445214722695f);
+    XCTAssertEqual(coordinate.longitude, -112.2656634181359f);
     coordinate = [linestring.coordinates objectAtIndex:4];
-    STAssertEquals(coordinate.latitude, 36.09679275951239f, nil);
-    STAssertEquals(coordinate.longitude, -112.2635746835406f, nil);
+    XCTAssertEqual(coordinate.latitude, 36.09679275951239f);
+    XCTAssertEqual(coordinate.longitude, -112.2635746835406f);
     coordinate = [linestring.coordinates objectAtIndex:10];
-    STAssertEquals(coordinate.latitude, 36.10149062823369f, nil);
-    STAssertEquals(coordinate.longitude, -112.2626894973474f, nil);
+    XCTAssertEqual(coordinate.latitude, 36.10149062823369f);
+    XCTAssertEqual(coordinate.longitude, -112.2626894973474f);
 
     // polygon
     placemark = [root.placemarks objectAtIndex:19];
-    STAssertEqualObjects(placemark.name, @"Relative Extruded", nil);
-    STAssertTrue([placemark.geometry isKindOfClass:[KMLPolygon class]], nil);
+    XCTAssertEqualObjects(placemark.name, @"Relative Extruded");
+    XCTAssertTrue([placemark.geometry isKindOfClass:[KMLPolygon class]]);
     KMLPolygon *polygon = (KMLPolygon *)placemark.geometry;
-    STAssertNotNil(polygon.outerBoundaryIs, nil);
-    STAssertEquals(polygon.outerBoundaryIs.coordinates.count, 9U,nil);
+    XCTAssertNotNil(polygon.outerBoundaryIs);
+    XCTAssertEqual(polygon.outerBoundaryIs.coordinates.count, 9U);
     coordinate = [polygon.outerBoundaryIs.coordinates objectAtIndex:0];
-    STAssertEquals(coordinate.latitude, 36.1514008468736f, nil);
-    STAssertEquals(coordinate.longitude, -112.3348783983763f, nil);
+    XCTAssertEqual(coordinate.latitude, 36.1514008468736f);
+    XCTAssertEqual(coordinate.longitude, -112.3348783983763f);
     coordinate = [polygon.outerBoundaryIs.coordinates objectAtIndex:4];
-    STAssertEquals(coordinate.latitude, 36.1489624162954f, nil);
-    STAssertEquals(coordinate.longitude, -112.3358353861232f, nil);
+    XCTAssertEqual(coordinate.latitude, 36.1489624162954f);
+    XCTAssertEqual(coordinate.longitude, -112.3358353861232f);
     coordinate = [polygon.outerBoundaryIs.coordinates objectAtIndex:8];
-    STAssertEquals(coordinate.latitude, 36.1514008468736f, nil);
-    STAssertEquals(coordinate.longitude, -112.3348783983763f, nil);
+    XCTAssertEqual(coordinate.latitude, 36.1514008468736f);
+    XCTAssertEqual(coordinate.longitude, -112.3348783983763f);
 }
 
 @end
