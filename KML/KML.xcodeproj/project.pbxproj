@@ -53,7 +53,7 @@
 		DCA461021C1388A600E9A1C1 /* KMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA460741C1388A500E9A1C1 /* KMLDocument.m */; };
 		DCA461031C1388A600E9A1C1 /* KMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA460751C1388A500E9A1C1 /* KMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCA461041C1388A600E9A1C1 /* KMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA460761C1388A500E9A1C1 /* KMLElement.m */; };
-		DCA461051C1388A600E9A1C1 /* KMLElementSubclass.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA460771C1388A500E9A1C1 /* KMLElementSubclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCA461051C1388A600E9A1C1 /* KMLElementSubclass.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA460771C1388A500E9A1C1 /* KMLElementSubclass.h */; };
 		DCA461061C1388A600E9A1C1 /* KMLExtendedData.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA460781C1388A500E9A1C1 /* KMLExtendedData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCA461071C1388A600E9A1C1 /* KMLExtendedData.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA460791C1388A500E9A1C1 /* KMLExtendedData.m */; };
 		DCA461081C1388A600E9A1C1 /* KMLFolder.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA4607A1C1388A500E9A1C1 /* KMLFolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -150,7 +150,7 @@
 		DCA461631C1388A600E9A1C1 /* KMLVec2.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA460D51C1388A600E9A1C1 /* KMLVec2.m */; };
 		DCA461641C1388A600E9A1C1 /* KMLViewVolume.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA460D61C1388A600E9A1C1 /* KMLViewVolume.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCA461651C1388A600E9A1C1 /* KMLViewVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA460D71C1388A600E9A1C1 /* KMLViewVolume.m */; };
-		DCA461661C1388A600E9A1C1 /* KMLXML.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA460D81C1388A600E9A1C1 /* KMLXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCA461661C1388A600E9A1C1 /* KMLXML.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA460D81C1388A600E9A1C1 /* KMLXML.h */; };
 		DCA461671C1388A600E9A1C1 /* KMLXML.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA460D91C1388A600E9A1C1 /* KMLXML.m */; };
 		DCA4616B1C1389CA00E9A1C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA4616A1C1389CA00E9A1C1 /* CoreGraphics.framework */; };
 		DCA4616D1C1389D200E9A1C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA4616C1C1389D200E9A1C1 /* Foundation.framework */; };
@@ -580,7 +580,6 @@
 				DCA460E71C1388A600E9A1C1 /* KMLAbstractStyleSelector.h in Headers */,
 				DCA461081C1388A600E9A1C1 /* KMLFolder.h in Headers */,
 				DCA460F11C1388A600E9A1C1 /* KMLBalloonStyle.h in Headers */,
-				DCA461051C1388A600E9A1C1 /* KMLElementSubclass.h in Headers */,
 				DCA4613E1C1388A600E9A1C1 /* KMLPoint.h in Headers */,
 				DCA461541C1388A600E9A1C1 /* KMLSimpleField.h in Headers */,
 				DCA461061C1388A600E9A1C1 /* KMLExtendedData.h in Headers */,
@@ -628,7 +627,6 @@
 				DCA461501C1388A600E9A1C1 /* KMLScreenOverlay.h in Headers */,
 				DCA4611A1C1388A600E9A1C1 /* KMLLinearRing.h in Headers */,
 				DCA460FF1C1388A600E9A1C1 /* KMLDelete.h in Headers */,
-				DCA461661C1388A600E9A1C1 /* KMLXML.h in Headers */,
 				DCA4615E1C1388A600E9A1C1 /* KMLType.h in Headers */,
 				DCA4612C1C1388A600E9A1C1 /* KMLModel.h in Headers */,
 				DCA460DB1C1388A600E9A1C1 /* KMLAbstractColorStyle.h in Headers */,
@@ -641,6 +639,8 @@
 				DCA460E91C1388A600E9A1C1 /* KMLAbstractSubStyle.h in Headers */,
 				DCA461141C1388A600E9A1C1 /* KMLLabelStyle.h in Headers */,
 				DCA461761C138A8B00E9A1C1 /* KML-Prefix.pch in Headers */,
+				DCA461051C1388A600E9A1C1 /* KMLElementSubclass.h in Headers */,
+				DCA461661C1388A600E9A1C1 /* KMLXML.h in Headers */,
 				DCA461161C1388A600E9A1C1 /* KMLLatLonAltBox.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
