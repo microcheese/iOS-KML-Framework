@@ -9,7 +9,7 @@ let package =   Package(
     .library(name: "iOS-KML-Framework", targets: ["iOS-KML-Framework"])
   ],
   targets: [
-    .target(name: "iOS-KML-Framework", path: "iOS-KML-Framework")
+    .target(name: "iOS-KML-Framework", path: "KML")
   ],
   swiftLanguageVersions: [.v5]
 )
